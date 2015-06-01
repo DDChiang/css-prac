@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
+    <style>
+        *       /* reset*/
+        {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            display: block;
+            width: 100%;
+            
+        }
+
+        ul li 
+        {
+            display: inline-block;
+            width: 20%;
+            float: left;   
+            background: red;
+            
+        }
+
+        ul li a
+        {
+            display: block;
+            width: 100%; 
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            padding: 5% 10%;
+            text-decoration: none;
+            color: black;
+        }
+
+        ul li:first-child
+        {
+            background: green;
+        }
+
+        ul li a:first-letter
+        {
+                color: #fff; 
+        }
+
+        p:first-line
+        {
+            color: green;
+        }
+
+        p:first-letter
+        {
+            font-size: 600%;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .grey
+        {
+            background: grey;
+        }
+
+        section {
+            display: block;
+            clear:both;
+            height: auto;
+        }
+
+        [data-type=siblings] 
+        {
+            background: grey;
+            display: block;
+        }
+
+        [data-type=siblings] p
+        {
+            display: inline-block;
+            height: auto;
+            
+        }
+
+         [data-type=siblings] div ~ p   /*sequential siblings*/
+        {
+            color: brown !important;
+            background: brown;
+        }
+
+
+    </style>
+	</head>
+	<body>
+		<header>This is a header</header>
+        <nav>
+            <ul>
+                <li><a href="#">Nav Item</a></li>
+                <li><a href="#">Nav Item</a></li>
+                <li><a href="#">Nav Item</a></li>
+                <li><a href="#">Nav Item</a></li>
+                <li><a href="#">Nav Item</a></li>
+            </ul>
+        </nav>
+        <section data-type="siblings">
+            <p>Poo</p>
+            <p>Poo</p>
+            <p>Poo</p>
+            <p>Poo</p>
+            <p>Poo</p>
+            <div class="poo">I'm looking for Poo siblings born after a certain year</div>
+            <p>Poo <span class="grey">grey</span></p>
+            <p>Poo</p>
+        </section>
+        <section>
+
+        </section>
+        <article>
+            <hgroup>
+                <h1>Article Title #1</h1>
+                <h2>subtitle</h2>
+            </hgroup>
+            <p>
+                 he element defines a section in a document.
+                <br />
+            According to W3C's HTML5 documentation: "A section is a thematic grouping of content, typically with a heading."
+                <br />
+
+        A Web site's home page could be split into sections for introduction, content, and contact information.
+            </p>
+        </article>
+	</body>
+</html>

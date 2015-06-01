@@ -1,0 +1,233 @@
+﻿
+//mixin 
+
+.box-sizing() {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	
+}
+
+section
+{
+	display: block;
+	width: 300px;
+	height: 300px;
+	background: #ddd;
+	.box-sizing();
+	float: left;
+	position: relative;
+	border: 1px solid grey;
+
+	&:nth-child(1)	//nth0child(1) doesn't affect anything...
+	{
+		background: red !important;
+
+		
+	}
+
+	&:nth-child(2)	//child 2 affects first "<Section> element
+	{
+		background: red !important;
+
+		div
+		{
+			-ms-transform: translate(50px, 100px);
+			-webkit-transform: translate(50px, 100px);
+			transform: translate(50px, 100px);
+		}
+	}
+
+	&:nth-child(3)
+	{
+		
+		div
+		{
+			
+			transform: rotate(-20deg);
+			-webkit-transform: rotate(-20deg);
+			-ms-transform: rotate(-20deg);
+		}
+	}
+
+	&:nth-child(4)
+	{
+
+		div
+		{
+			transform: scale(1.2, 1.2);
+			-webkit-transform: scale(1.2, 1.2);
+			-ms-transform: scale(1.2, 1.2);
+		}
+	}
+
+	&:nth-child(5)
+	{
+		background: blue !important;
+
+		div
+		{
+			transform: skewX(-20deg);
+			-webkit-transform: skewX(-20deg);
+			-moz-transform: skewX(-20deg);
+		}
+	}
+
+	&:nth-child(6)
+	{
+		background: blue !important;
+
+		div
+		{
+			transform: skewY(20deg);
+			-webkit-transform: skewY(20deg);
+			-moz-transform: skewY(20deg);
+		}
+	}
+
+	&:nth-child(7)
+	{
+		background: blue !important;
+
+		div
+		{
+			transform: skewY(-20deg);
+			-webkit-transform: skewY(-20deg);
+			-moz-transform: skewY(-20deg);
+		}
+	}
+
+	&:nth-child(8)	//skew both X + Y
+	{
+		background: blue !important;
+
+		div
+		{
+			transform: skew(10deg, 20deg);
+			-webkit-transform: skew(10deg, 20deg);
+			-moz-transfornm: skew(10deg, 20deg);
+		}
+	}
+
+	&:nth-child(9)
+	{
+		background: blue !important;
+
+		div
+		{
+			transform: rotate(60deg);
+			-webkit-transform: rotate(60deg);
+			-moz-transform: rotate(60deg);
+			transform:skew(10deg, 33deg);		//only the last transform schema gets taken. In this case, skew came after rotate so only skew affects
+			-webkit-transform:skew(10deg, 33deg);	
+			-moz-transform:skew(10deg, 33deg);
+		}
+	}
+
+	&:nth-child(10)	
+	{
+		background: blue !important;
+
+		div			//catch all! Affect all 2d transform props at once
+		{
+			transform: matrix(1,0,0,0,0,0);
+			-webkit-transform: matrix(1,0,0,0,0,0);
+			-moz-transform: matrix(1,0,0,0,0,0);
+		}
+	}
+
+	&:nth-child(11)
+	{
+		background: blue !important;
+
+		div
+		{
+			
+		}
+	}
+
+	&:nth-child(12)
+	{
+		background: blue !important;
+
+		div
+		{
+		
+		}
+	}
+
+	&:nth-child(13)
+	{
+		background: blue !important;
+
+		div
+		{
+		
+		}
+	}
+}
+
+div
+{
+	position: absolute;
+	display: block;
+    background: #ff9900;
+	width: 200px;
+	height: 200px;
+	font-size: 15px;
+	font-family: 'arial', sans-serif;
+	.box-sizing();
+	padding: 10px;
+	float: center;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+
+
+	span
+	{
+		background: #ff3300;
+	}	
+
+	&.momma
+	{
+		  width: 100%;
+		  background: white;
+		  border: 1px solid black;
+		  height: 250px;
+	}
+
+	&.third
+	{
+		background: orange;
+
+		span
+		{
+			background: #ddd;
+		}
+	}
+
+	&.float_left
+	{
+		float: left;
+	}
+		
+}
+
+hr
+{
+	width: 100% !important;
+}
+
+section > h1
+{
+	text-align: center;
+}
+
